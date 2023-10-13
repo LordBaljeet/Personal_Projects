@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/*-----------------------------------------------None Game Styling----------------------------------------------------*/
+
+*{
+-style:-360 -240;
+}
+
+.button,.label{
+-fx-background-color: none;
+-fx-font:30 "Press Start 2P";
+-fx-text-fill:rgb(214, 6, 3);
+}
+
+.choice-box, .choice-box .menu-item{
+-fx-pref-width:100px;
+-fx-pref-height:50px;
+-fx-background-color:#000;
+}
+
+.homeButtons{
+-fx-spacing:30;
+-fx-padding:50;
+}
+
+#title{
+-fx-font-family:"Press Start 2P";
+-fx-font-size:50;
+-fx-text-fill:rgb(214, 6, 3);
+-fx-padding:30px;
+}
+
+.button:hover{
+-fx-text-fill:yellowgreen;
+-fx-cursor:hand;
+}
+
+/*-----------------------------------------------Game Styling----------------------------------------------------*/
+
+.infos .label{
+-fx-font-size:18;
+}
+
+.infos{
+-fx-max-height:64;
+-fx-padding:0 0 0 384 ;
+}
+
+.gameScreen{
+-fx-background-color:rgba(0,0,0,.8);
+}
+
+.message{
+-fx-background-radius:20;
+-fx-border-radius:20;
+-fx-border-color:blue;
+-fx-background-color:rgba(255,255,255,.8);
+-fx-font-family:null;
+}
+
+.messageText{
+-fx-font-size:12;
+-fx-text-fill:#175404;
+}
+
+.errorText{
+-fx-font-size:12;
+-fx-text-fill:red;
+}
+
+.messageBtn{
+-fx-font-size:15;
+}
+
+.keyboardKey{
+-fx-border:1;
+-fx-border-radius:12;
+-fx-padding:20;
+-fx-border-color:blue;
+-fx-pref-width:230;
+-fx-background-color:rgb(0,0,0,.5)
+}
+
+.keyboardKey:hover{
+-fx-border-color:#d68213;
+}
+
+.controlsTitle{
+-fx-padding:20;
+}
+
+.separator{
+-fx-border:20;
+}
+
+.controlsPage{
+-fx-background-color:black;
+}
+
+.homePageGrid{
+-fx-background-color:black;
+-fx-padding:60;
+-fx-hgap:5;
+-fx-vgap:5;
+}
+
+.gridItem{
+-fx-background-color:#000;
+-fx-border-color:#fff;
+}
+
+.playGridImage{
+-fx-background-image:url("../Images/playGif.gif");
+-fx-background-repeat:stretch;
+-fx-background-position: center center;
+-fx-background-size: 110% 100%;
+}
+
+.control{
+-fx-padding:15;
+}
+
+.control .label{
+-fx-text-fill:#fff;
+-fx-font-size:20;
+}
+
+.control .button{
+-fx-border-color:#2615e4;
+-fx-border-radius:12;
+-fx-font-size:20;
+}
+
+.keyBox{
+-fx-spacing:12;
+-fx-padding:0;
+}
+.settingsContainer{
+-fx-padding:20;
+}
+
+.settingsContainer .label{
+-fx-font-size:20;
+}
+
+.percentage{
+-fx-fill:red;
+}
+
+.square{
+-fx-background-image:url("../Images/Sprite2.png");
+}
+
+.infoBox{
+-fx-min-height:64;
+-fx-min-width:64;
+-fx-max-height:64;
+-fx-max-width:64;
+-fx-border-style: solid none none solid;
+-fx-border-color:white;
+-fx-border-width:3;
+-fx-background-color:black;
+-fx-alignment:center;
+}

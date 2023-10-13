@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{%block includes%}
+  <link rel="stylesheet" href="{% static 'home.css' %}?v=2">
+  <link rel="stylesheet" href="{% static 'approvalRequests.css' %}?v=2">
+{%endblock%}
+
+{%block title%}
+Add Records
+{%endblock%}
+
+{%block content%}
+    <div class="content">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{%endblock%}

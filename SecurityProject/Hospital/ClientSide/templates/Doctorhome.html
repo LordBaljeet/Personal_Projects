@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{%block includes%}
+  <link rel="stylesheet" href="{% static 'home.css' %}?v=3">
+{%endblock%}
+
+{%block title%}
+DoctorHome
+{%endblock%}
+
+{%block content%}
+<div class="userProfile">
+  <form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="action" id="action" value="logout" hidden>
+    <button type="submit" title="log out">
+      <i class="fa-solid fa-right-from-bracket logout"></i>
+    </button>
+  </form>
+</div>
+
+<div class="content">
+  <h1>Welcome {{username}}</h1>
+  <div class="links">
+    <a href="{% url 'consult patients records' %}">
+        <i class="fa-solid fa-notes-medical"></i>
+        <span>Add record</span>
+    </a>
+    <a href="{% url 'Consult Patients' %}">
+        <i class="fa-solid fa-notes-medical"></i>
+        <span>Consult Patients</span>
+    </a>
+  </div>
+</div>
+{%endblock%}
+
+

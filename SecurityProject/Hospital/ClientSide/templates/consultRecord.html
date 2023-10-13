@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{%block includes%}
+  <link rel="stylesheet" href="{% static 'home.css' %}?v=2">
+  <link rel="stylesheet" href="{% static 'approvalRequests.css' %}?v=2">
+{%endblock%}
+
+{%block title%}
+Consulting {{record.record_name}}
+{%endblock%}
+
+{%block content%}
+    <div class="content">
+        <form action="" method="post">
+            {% csrf_token %}
+            {% if canManageFile%}
+            <textarea name="record_content" id="record_content" cols="30" rows="10">{{record.record_content}}</textarea>
+            
+            <div class="buttons">
+                    <button type="submit" value="{{record.record_id}}" name="save" id="save">Save</button>
+                    <button type="submit" value="{{record.record_id}}" name="delete" id="delete">Delete</button>
+            </div>
+            {% else %}
+            <textarea name="record_content" id="record_content" cols="30" rows="10" disabled>{{record.record_content}}</textarea>
+            <div class="buttons">
+                {% if hasAlreadyRequestedRights %}
+                    <button disabled>Request Already Issued</button>
+                {% else %}
+                    <button type="submit" value="{{record.record_id}}" name="requestRights" id="requestRights", title="requestRights">Request Rights</button>
+                {% endif %}
+            </div>
+            {% endif %}
+            <button type="submit" value="{{record.record_id}}" name="download">Download</button>
+        </form>
+    </div>
+{%endblock%}

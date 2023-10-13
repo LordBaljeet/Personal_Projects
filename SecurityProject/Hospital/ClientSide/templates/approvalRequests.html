@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+{%block includes%}
+  <link rel="stylesheet" href="{% static 'home.css' %}?v=3">
+  <link rel="stylesheet" href="{% static 'approvalRequests.css' %}?v=3">
+{%endblock%}
+
+{%block title%}
+Approval Requests
+{%endblock%}
+
+{%block content%}
+
+<div class="content">
+  <div class="container">
+    <div class="adminSection section">
+        <h1>Admins Wait List</h1>
+        {% for admin in admins %}
+        <div class="waitingUser">
+          <span class="user">
+              {{ admin.waitingAdmin }}
+          </span> 
+          <form action="" method="post" class="actions">
+              {% csrf_token %}
+              <input type="text" name="username" id="username" value="{{admin.waitingAdmin.username}}" hidden>
+              <button type="submit" value="approved" name="decision" id="decision" title="approve">
+                  <i class="fa-solid fa-thumbs-up" style="color: #27fe10;"></i>
+              </button>
+              <button type="submit" value="declined" name="decision" id="decision" title="decline">
+                  <i class="fa-solid fa-thumbs-down" style="color: #ff001a;"></i>
+              </button>
+          </form>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="doctorSection section">
+        <h1>Doctors Wait List</h1>
+        {% for doctor in doctors %}
+        <div class="waitingUser">
+          <span class="user">
+              {{ doctor.waitingDoctor }}
+          </span> 
+          <form action="" method="post" class="actions">
+              {% csrf_token %}
+              <input type="text" name="username" id="username" value="{{doctor.waitingDoctor.username}}" hidden>
+              <button type="submit" value="approved" name="decision" id="decision" title="approve">
+                  <i class="fa-solid fa-thumbs-up" style="color: #27fe10;"></i>
+              </button>
+              <button type="submit" value="declined" name="decision" id="decision" title="decline">
+                  <i class="fa-solid fa-thumbs-down" style="color: #ff001a;"></i>
+              </button>
+          </form>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="userSection section">
+        <h1>List of Users</h1>
+        {% for user in users %}
+        <div class="waitingUser">
+          <span class="user">
+              {{ user }}
+          </span> 
+          <form action="" method="post" class="actions">
+              {% csrf_token %}
+              <input type="text" name="username" id="username" value="{{user.username}}" hidden>
+              <button type="submit" value="declined" name="decision" id="decision" title="delete">
+                  <i class="fa-solid fa-trash" style="color: #f20006;"></i>
+              </button>
+          </form>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+{%endblock%}

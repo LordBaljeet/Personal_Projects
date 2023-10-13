@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{%block includes%}
+  <link rel="stylesheet" href="{% static 'home.css' %}?v=2">
+{%endblock%}
+
+{%block title%}
+AdminHome
+{%endblock%}
+
+{%block content%}
+<div class="userProfile">
+  <form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="action" id="action" value="logout" hidden>
+    <button type="submit" title="log out">
+      <i class="fa-solid fa-right-from-bracket logout"></i>
+    </button>
+  </form>
+</div>
+
+<div class="content">
+  <h1>Welcome {{request.user}}</h1>
+  <div class="links">
+  <a href="{% url 'approval requests' %}">
+    <i class="fa-solid fa-inbox"></i>
+    <span>Approval Requests</span>
+  </a>
+  </div>
+</div>
+{%endblock%}

@@ -1,0 +1,75 @@
+.login{
+    color: rgb(8, 216, 19);
+    background-color: none;
+}
+
+.logout{
+    color: red;
+}
+
+.userProfile{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: white;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userProfile button{
+    background: none;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 30px;
+  }
+  
+  .links a{
+    height: 60vh;
+    width: 20vw;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6em;
+    text-decoration: none;
+  }
+  
+  .links i {
+    font-size: 8em;
+    color: orange;
+  }
+  
+  .links span{
+    color: white;
+    font-size: 1.8em;
+    text-decoration: none;
+  }
+  
+  .links a:hover{
+    transform: scale(1.02);
+  }
+  
+  .links a:hover > i{
+    color: rgb(255, 115, 0);
+  }
+
+  :root{
+    --shadow :-2px 2px 10px var(--color) ,2px -2px 10px var(--color);
+    --color :#fb6c01;
+  }
+
+  button {
+    color: cyan;
+  }

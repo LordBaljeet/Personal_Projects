@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{%block includes%}
+<link rel="stylesheet" href="{% static 'home.css' %}?v=2">
+<link rel="stylesheet" href="{% static 'approvalRequests.css' %}?v=2">
+{%endblock%}
+
+{%block title%}
+Consult Records
+{%endblock%}
+
+{%block content%}
+
+<div class="content">
+  <div class="container">
+    <div class="section">
+      <h1>Records</h1>
+      <a href="{% url 'addRecord' %}">Upload a new record</a>
+      {% for record in records %}
+      <form action="{% url 'consult record' %}" method="post" class="actions">
+        {% csrf_token %}
+        <button type="submit" name="record_id" id="record_id"
+          value="{{record.record_id}}">{{record.record_name}}</button>
+      </form>
+      {% endfor %}
+    </div>
+    <div class="section">
+      <h1>Upload Requests</h1>
+      {% for request in uploadRequests %}
+      <div class="waitingUser">
+        <span class="user">
+          {{ request.doctor }}
+        </span>
+        <form action="" method="post" class="actions">
+          {% csrf_token %}
+          <button type="submit" value="{{request.doctor}}" name="approveUpload" id="approveUpload" title="approve">
+            <i class="fa-solid fa-thumbs-up" style="color: #15ff00;"></i>
+          </button>
+          <button type="submit" value="{{request.doctor}}" name="declineUpload" id="declineUpload" title="decline">
+            <i class="fa-solid fa-thumbs-down" style="color: #ff001a;"></i>
+          </button>
+        </form>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="section">
+      <h1>Managment Requests</h1>
+      {% for request in managmentRequests %}
+      <div class="waitingUser">
+        <span class="user">
+          {{ request.record.patient }}
+        </span>
+        <span class="user">
+          {{ request.record.record_name }}
+        </span>
+        <form action="" method="post" class="actions">
+          {% csrf_token %}
+          <button type="submit" value="{{request.record_id}}" name="approveManagment" id="approveManagment" title="approve">
+            <i class="fa-solid fa-thumbs-up" style="color: #15ff00;"></i>
+          </button>
+          <button type="submit" value="{{request.record_id}}" name="declineManagment" id="declineManagment" title="decline">
+            <i class="fa-solid fa-thumbs-down" style="color: #ff001a;"></i>
+          </button>
+        </form>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{%endblock%}

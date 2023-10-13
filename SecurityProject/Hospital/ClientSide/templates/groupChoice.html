@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{%block includes%}
+<link rel="stylesheet" href="{% static 'groupChoice.css' %}?v=2">
+{%endblock%}
+
+{%block title%}
+Group Choice
+{%endblock%}
+
+{%block content%}
+    <h1>Welcome to the Hospital</h1>
+    <div class="links">
+        <a href="{% url 'patient signup' %}">
+            <i class="fa-solid fa-bed-pulse"></i>
+            <span>I am a Patient</span>
+        </a>
+        <a href="{% url 'doctor signup' %}">
+            <i class="fa-solid fa-user-doctor"></i>
+            <span>I am a Doctor</span>
+        </a>
+        <a href="{% url 'admin signup' %}">
+            <i class="fa-solid fa-lock"></i>
+            <span>I am an Admin</span>
+        </a>
+    </div>
+{%endblock%}

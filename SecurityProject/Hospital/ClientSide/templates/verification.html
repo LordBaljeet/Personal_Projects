@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Verification
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="verification_form form">
+      <h1>Verification</h1>
+      <form method="POST" action="">
+        {% csrf_token %}
+        {% if error_message %}
+          <p class="error">{{ error_message }}</p>
+        {% endif %}
+        <p>
+          <label for="code">Verification Code:</label>
+          <input type="text" id="code" name="code">
+        </p>
+        <button type="submit" value="Verify">Verify</button>
+      </form>
+  </div>
+</div>
+{% endblock %}

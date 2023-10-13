@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{%block includes%}
+<link rel="stylesheet" href="{% static 'signup.css' %}?v=1">
+{%endblock%}
+
+{%block title%}
+Login
+{%endblock%}
+
+{%block content%}
+<div class="container">
+  <div class="login_form form">
+      <h1>Welcome Back!</h1>
+      {% if error_message %}
+          <p class="error">{{ error_message }}</p>
+      {% endif %}
+      <form method="POST" action="">
+        {% csrf_token %}
+        <p>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username">
+        </p>
+        <p>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password">
+        </p>
+        
+        <button type="submit" value="Login">Login</button>
+      </form>
+      Not registered yet? <a href="{% url 'group choice' %}">click here to register!</a>
+  </div>
+</div>
+{%endblock%}

@@ -1,0 +1,283 @@
+/* An import for the fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Playfair+Display');
+
+body {
+    color: red;
+    background-color: #1a1c1d;
+    position: relative;
+}
+
+h1 {
+    width: fit-content;
+    margin: auto;
+    font-family: 'Press Start 2P', cursive;
+    border-bottom: 5px solid red;
+}
+p:not(.container p){
+    font-size: 1.5em;
+    font-family: 'Playfair', serif;
+    font-weight: bold;
+}
+
+button{
+    cursor: pointer;
+}
+/* ================Game Container====================== */
+
+.container{
+    position: relative;
+    width: fit-content;
+    margin: 100px auto;
+    height: 700px;
+}
+
+/* ================Game Infos====================== */
+
+.gameInfo{
+    position: relative;
+    background-color: black;
+    font-family: 'Press Start 2P', serif;
+    border-radius: 6px;
+    border: 2px solid white;
+    visibility: hidden;
+    padding: 10px;
+}
+.gameButtons button{
+    width: 80%;
+    height: 40px;
+    font-weight: bold;
+    margin: auto auto 10px 10%;
+}
+.gameInfo button:hover{
+    color: rgb(255, 0, 212);
+    border: 1px solid black;
+}
+.gameInfo span:not(.tooltipText){
+    background-color: white;
+    border-radius: 2px;
+    padding: 7px;
+    font-size: 1.2em;
+    height: line-height;
+}
+
+.rewind{
+    width: 35px !important;
+    font-size: 1.5em;
+    height: 35px !important;
+    font-weight: bold;
+}
+
+.bestText {
+    display: none;
+}
+/* ================Help Modal====================== */
+
+.modalContainer{
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 80vw;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: auto;
+    height: 100%;
+}
+.close{
+    float: right !important;
+    padding: 5px;
+    font-size: 30px;
+    color: yellow;
+}
+.close:hover{
+    color: red;
+    cursor: pointer;
+}
+.modalContent{
+    margin-top:10vh;
+    color: white;
+    background-color: rgba(7, 0, 0, 0.836);
+    height: 800px;
+    position: relative;
+}
+.hints{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 70px;
+    bottom: 0;
+    width: 100%;
+}
+.hints p{
+    padding: 0 20px;
+}
+.hintTitle{
+    color: greenyellow;
+    border-right: 2px solid greenyellow;
+    padding-right: 5px;
+}
+.modalContent img{
+    height: auto;
+    width: 100px;
+    border: 5px double ;
+    padding: 10px;
+}
+
+/* ================Level Navigation====================== */
+.levelNav button{
+    width: 35px;
+    height: 35px;
+    max-width: 40px;
+    display: inline;
+    visibility: hidden;
+    font-size: 1.5em;
+    padding: 8px 0;
+    line-height: 0.4em;
+    font-weight: bold;
+}
+.levelNavToggle{
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  color: #FFFFFF;
+  font-size: 14px;
+  padding: 10px 16px;
+  text-align: center;
+}
+/* ================Line====================== */
+
+.line{
+    display: flex;
+    flex-direction: row;
+}
+
+/* ================Square====================== */
+
+.square {
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+.square::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/sprites.png), url(../images/ground.png)!important;
+}
+/* ================Player====================== */
+.player {
+    background-color: #bf1ff0 !important;
+}
+.player::before{
+    background-position: 120px 30px !important;
+}
+.up::before{
+    background-position: 150px 30px !important;
+}
+.right::before{
+    background-position: 120px 0px !important;
+}
+.left::before{
+    background-position: 0px 0px !important;
+}
+.down::before{
+    background-position: 180px 0px !important;
+}
+
+/* ================Box====================== */
+
+.box {
+    background-color: #eb4034 !important;
+}
+.box::before{
+    background-position: 60px 0px !important;
+}
+.onTarget::before{
+    background-position: 60px 30px !important;
+}
+
+/* ================Target====================== */
+
+.destination {
+    background-color: #4feb34;
+}
+.destination::before{
+    background-position: 30px 0px;
+}
+
+/* ================Wall====================== */
+
+.wall {
+    background-color: #3f453e;
+}
+.wall::before{
+    background-position: 90px 30px;
+}
+/* ================Floor====================== */
+
+.floor {
+    background-color: #e3eb7a;
+}
+.floor::before{
+    background-position: 90px 0px;
+}
+/* ================Pop Screens====================== */
+
+.screen{
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;   
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #1a1c1dcc;
+    height: 80%;
+    font-size: 60%;
+    z-index: 1;
+    display: none;
+}
+.screen h1{
+    border: none;
+}
+.screen p{
+    margin-top: 15%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.7em;
+    font-weight: bold;
+    color: white;
+}
+
+.nextLevIndex{
+    display: inline-block;
+    background-color: #32a852;
+    width: 20px;
+}
+
+/* ================Footer====================== */
+
+footer {
+    background-color: rgba(0, 0, 0, 0.384);
+    border-radius: 20px;
+    position: absolute;
+    width: 80vw;
+    right: 0;
+    left: 0;
+    height: fit-content;
+    margin: auto;
+    padding: 10px 0;
+}
+footer p{
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+    padding-bottom: 10px !important;
+    
+}
+.authorInfo{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 15px;
+    border-top: 4px solid rgba(255, 0, 0, 0.582);
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/game.js"></script>
+    <script src="scripts/levels.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/stats.js"></script>
+    <title>Sokoban - Webg2</title>
+    <link rel="icon" type="image/x-icon" href="images/box.png">
+</head>
+
+<body>
+    <h1>Sokoban</h1>
+    <p class="soon">Coming soon...</p>
+
+    <button type="button" class="levelNavToggle playerMode">Enter Dev mode</button>
+
+    <div class="container">
+        <!---------EndGame Screen---------->
+        <div class="applause screen">
+            <h1>🎉Congratulations!🎉</h1>
+            <p>You finished the last Level! Impressive!</p>
+        </div>
+        <!---------EndLevel Screen---------->
+        <div class="gameOver screen">
+            <h1>Level Complete!</h1>
+            <p>Press the SpaceBar to play the next level: <span class="nextLevIndex">1</span></p>
+        </div>
+        <!---------Game level---------->
+        <div id="world"></div>
+        <!---------Game Infos---------->
+        <div class="gameInfo">
+            <p>
+                Moves:
+                <button type="button" class="rewind">&#xab;</button>
+                <span>0</span>
+            </p>
+            <p class="bestText">
+                Best:
+                <span class="best">0</span>
+            </p>
+            <div class="levelNav">
+                <p>
+                    Level:
+                    <button type="button" class="prevLevel tooltip">&#xab;<span class="prevLev tooltipText"></span></button>
+                    <span>0</span> <button type="button" class="nextLevel">&#xbb;<span
+                            class="nextLev tooltipText"></span></button>
+                </p>
+            </div>
+            <div class="gameButtons">
+                <button type="button" class="resetLevel">Reset Level &olarr;</button>
+                <button id="helpBtn" type="button">Need Help?</button>
+            </div>
+        </div>
+    </div>
+    <!---------Help Modal---------->
+    <div class="modalContainer container">
+        <div class="modalContent">
+            <span class="close">&times;</span>
+            <h1>Hints</h1>
+            <div class="hints">
+                <img src="images/help-push.png" alt="help-push">
+                <p><span class="hintTitle">Push:</span> You can push a box forward by going behind it and then advance
+                    againt it. However, a box can only be pushed if the square in which it will be pushed to is empty.
+                </p>
+                <img src="images/help-pull.png" alt="help-pull">
+                <p><span class="hintTitle">Pull</span> You can't pull a box per say, but what you can do is go behind
+                    it and push it towards the desired square.</p>
+                <img src="images/help-double.png" alt="help-double">
+                <p><span class="hintTitle">Push Double</span> You can't push 2 boxes at the same time.</p>
+                <img src="images/help-level.png" alt="help-level">
+                <p><span class="hintTitle">Targets</span> The green dots present on some squares are called targets.
+                    The player can't interact with targets. Their purpose is to recieve boxes, one box per target. A box
+                    is correctly placed on a target when its color change. </p>
+                <img src="images/help-win.png" alt="help-win">
+                <p><span class="hintTitle">Win the game</span> In order to win the game, you must place all the boxes
+                    on targets, one box per target, in as few moves as possible.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Images crées par  Jeng-Long Jiang.</p>
+        <div class="authorInfo">
+            <span>Taha Ahmed</span>
+            <span>58744</span>
+            <span>SDR</span>
+        </div>
+    </footer>
+
+    <script>
+        // When page loaded, setup level 0.
+        $(document).ready(function() {
+            setGame();
+        });
+    </script>
+    
+</body>
+
+</html>

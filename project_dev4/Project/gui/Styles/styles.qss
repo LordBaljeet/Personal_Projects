@@ -1,0 +1,50 @@
+* {
+    background-color: black;
+    color: rgb(252, 3, 80);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+QLabel, QPushButton, QStackedWidget, QWidget#helpContainer {
+    border: 2px solid white;
+}
+
+QLabel#helpSectionTitle {
+    border: 2px solid white;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+QLabel#helpSectionLabel {
+    border: 2px solid white;
+    border-radius: 6px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+QLabel#helpSectionKey {
+    border: 2px solid white;
+    border-radius: 6px;
+    padding: 5px;
+    font-size: 20px;
+    color: cyan;
+}
+
+QLabel#helpSectionKey:hover {
+    border: 2px dashed white;
+}
+
+QPushButton:hover {
+    color: cyan;
+}
+
+QWidget#boardView {
+    background-color: rgb(8,8,8);
+    border: none;
+}
+
+QLabel#resetStyling {
+    border: none;
+    background: none;
+}
+

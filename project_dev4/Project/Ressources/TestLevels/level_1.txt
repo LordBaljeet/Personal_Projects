@@ -1,0 +1,8 @@
+4 3
+baba 1 0
+flag 2 0
+text_flag 1 1
+text_baba 0 2
+is 1 2
+you 2 2
+win 1 3

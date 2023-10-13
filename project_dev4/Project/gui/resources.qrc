@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/baba.png</file>
+        <file>Images/best.png</file>
+        <file>Images/exit.png</file>
+        <file>Images/flag.png</file>
+        <file>Images/from.png</file>
+        <file>Images/game.png</file>
+        <file>Images/grass.png</file>
+        <file>Images/is.png</file>
+        <file>Images/kill.png</file>
+        <file>Images/lava.png</file>
+        <file>Images/Logo.png</file>
+        <file>Images/metal.png</file>
+        <file>Images/play.png</file>
+        <file>Images/push.png</file>
+        <file>Images/rock.png</file>
+        <file>Images/save.png</file>
+        <file>Images/sink.png</file>
+        <file>Images/start.png</file>
+        <file>Images/stop.png</file>
+        <file>Images/text_baba.png</file>
+        <file>Images/text_flag.png</file>
+        <file>Images/text_grass.png</file>
+        <file>Images/text_lava.png</file>
+        <file>Images/text_metal.png</file>
+        <file>Images/text_rock.png</file>
+        <file>Images/text_wall.png</file>
+        <file>Images/text_water.png</file>
+        <file>Images/void.png</file>
+        <file>Images/wall.png</file>
+        <file>Images/water.png</file>
+        <file>Images/win.png</file>
+        <file>Images/you.png</file>
+        <file>Images/zero.png</file>
+        <file>Styles/styles.qss</file>
+    </qresource>
+</RCC>

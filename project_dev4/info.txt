@@ -1,0 +1,3 @@
+Matricules : 58744, 58412
+
+Choix de structure du projet : Qt Creator - CMake
